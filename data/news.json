@@ -1,0 +1,9 @@
+[
+  {
+    "date": "2026-06-07",
+    "title": "Introducing FVP - Offline Format Viewer & Parser",
+    "body": "I'm excited to announce FVP, an offline \"Local-First\" toolkit for every data format. It allows you to format, validate, compare, and inspect common developer formats locally in your browser. Whether you need to visualize logs, validate Docker Compose files, decode JWTs, or format JSON/YAML, FVP has you covered with a privacy-first approach.",
+    "link": "https://fvp-web.msweelam.dev/",
+    "linkText": "Check out FVP"
+  }
+]

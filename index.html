@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Sweelam — Engineer, Mentor &amp; Author</title>
-    <meta name="description" content="«Software Engineer, Mentor, and Author specializing in distributed systems, cloud-native architectures, and developer education.">
+    <meta name="description"
+        content="«Software Engineer, Mentor, and Author specializing in distributed systems, cloud-native architectures, and developer education.">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Mohamed Sweelam — Engineer, Mentor &amp; Author">
-    <meta property="og:description" content="Software Engineer, Mentor, and Author specializing in distributed systems, cloud-native architectures, and developer education.">
+    <meta property="og:description"
+        content="Software Engineer, Mentor, and Author specializing in distributed systems, cloud-native architectures, and developer education.">
     <meta property="og:image" content="https://msweelam.dev/img/me.png">
     <meta property="og:url" content="https://msweelam.dev">
     <meta property="og:type" content="website">
@@ -25,11 +27,11 @@
 
     <!-- Anti-FOUC: apply saved theme before first paint -->
     <script>
-    (function(){
-        var t = localStorage.getItem('theme');
-        var p = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (t === 'dark' || (!t && p)) document.documentElement.setAttribute('data-theme','dark');
-    })();
+        (function () {
+            var t = localStorage.getItem('theme');
+            var p = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (t === 'dark' || (!t && p)) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
     </script>
 
     <!-- JSON-LD Person schema -->
@@ -51,391 +53,582 @@
 
 <body>
 
-<!-- ─── HEADER ─────────────────────────────────────────── -->
-<header class="site-header">
-    <nav class="nav container">
-        <a href="/" class="nav-logo" aria-label="Home">
-            <div class="logo-img-wrap">
-                <img src="img/my-logo.jpeg" alt="Mohamed Sweelam" class="site-logo" data-light="img/my-logo.jpeg" data-dark="img/my-logo-dark.png">
-            </div>
-        </a>
-
-        <div class="nav-links" id="nav-links" role="navigation">
-            <a href="#about">About</a>
-            <a href="https://blog.msweelam.dev" target="_blank" rel="noopener noreferrer">Blog</a>
-            <a href="#services">Services</a>
-            <a href="#books">Books</a>
-            <a href="#courses">Courses</a>
-            <a href="#news">News</a>
-        </div>
-
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-</header>
-
-<main>
-
-<!-- ─── HERO ───────────────────────────────────────────── -->
-<section class="hero">
-    <div class="container hero-grid">
-        <div class="hero-text">
-            <p class="hero-eyebrow">Engineer &middot; Mentor &middot; Author</p>
-            <h1>Mohamed Sweelam</h1>
-            <p class="hero-tagline">Software Engineer with over a decade of experience building distributed systems across multiple industries, including telecom, hotel management, customer engagement, and fintech. I mentor engineers, author books, and share knowledge through courses and writing.</p>
-
-            <div class="hero-actions">
-                <a href="#services" class="btn btn-primary">
-                    Work with me
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-                <a href="https://blog.msweelam.dev" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                    Read the blog
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-            </div>
-
-            <nav class="social-row" aria-label="Social links">
-                <a href="https://github.com/sweelam" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/mohamedsweelam" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-                <a href="https://blog.msweelam.dev" target="_blank" rel="noopener noreferrer" aria-label="Blog">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-                </a>
-                <a href="mailto:md.sweelam@gmail.com" aria-label="Email">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                </a>
-                <a href="https://www.youtube.com/@ArabSoftwareArchTalks" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
-                </a>
-            </nav>
-        </div>
-
-        <div class="hero-photo">
-            <img src="img/me.png" alt="Mohamed Sweelam">
-        </div>
-    </div>
-</section>
-
-<!-- ─── ABOUT — Engineer, Mentor & Author ──────────────── -->
-<section id="about" class="section section-alt">
-    <div class="container">
-        <h2 class="section-title">Engineer, Mentor &amp; Author</h2>
-        <p class="section-intro">A decade of experience across fintech, enterprise, and developer education — building systems, growing engineers, and sharing what I've learned.</p>
-
-        <div class="roles-grid">
-
-            <div class="role-card">
-                <div class="role-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><circle cx="6" cy="6" r="1"/><circle cx="6" cy="18" r="1"/></svg>
-                </div>
-                <h3>AI Enablement Engineer</h3>
-                <p>10+ years designing cloud-native microservices and distributed systems in high-stakes fintech environments. Expert in Java, Spring Boot, Kafka, and scalability patterns.</p>
-                <div class="pills" style="margin-top:1rem">
-                    <span class="pill">Distributed Systems</span>
-                    <span class="pill">Cloud-Native</span>
-                    <span class="pill">Microservices</span>
-                    <span class="pill">AI Enablement</span>
-                </div>
-            </div>
-
-            <div class="role-card">
-                <div class="role-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <h3>Mentor</h3>
-                <p>Mentored 50+ engineers through the <strong>To Be Engineer</strong> program — from junior to senior and lead. Structured sessions on system design, clean code, architecture, and career growth.</p>
-                <div class="pills" style="margin-top:1rem">
-                    <span class="pill">50+ Engineers</span>
-                    <span class="pill">System Design</span>
-                    <span class="pill">Career Growth</span>
-                </div>
-            </div>
-
-            <div class="role-card">
-                <div class="role-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                </div>
-                <h3>Author</h3>
-                <p>Co-author of <em>The Highway Path to Scalable Systems</em>. I also write regularly at <a href="https://blog.msweelam.dev" target="_blank" rel="noopener noreferrer" class="inline-link">blog.msweelam.dev</a> on backend engineering, system design, and career development.</p>
-                <div class="pills" style="margin-top:1rem">
-                    <span class="pill">Scalable Systems</span>
-                    <span class="pill">Technical Writing</span>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ─── SERVICES ────────────────────────────────────────── -->
-<section id="services" class="section section-alt">
-    <div class="container">
-        <h2 class="section-title">Services</h2>
-        <p class="section-intro">Personalized programs designed to accelerate your engineering career at every level.</p>
-
-        <div class="services-grid">
-
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                </div>
-                <h3>Full Mentorship Program</h3>
-                <p class="service-meta">2 months &middot; 8–10 sessions &middot; 60 min each</p>
-                <p>A structured 2-month journey covering system design, clean code, software architecture, domain-driven design, scalable systems, and mock interviews. Tailored to your level and goals.</p>
-                <a href="mailto:md.sweelam@gmail.com" class="service-cta">
-                    Apply now
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                </div>
-                <h3>One-Day Training</h3>
-                <p class="service-meta">1 day &middot; 3 sessions &middot; 140 min each</p>
-                <p>An intensive one-day deep-dive session for teams or individuals. Covers backend engineering fundamentals, architecture patterns, and hands-on problem solving.</p>
-                <a href="mailto:md.sweelam@gmail.com" class="service-cta">
-                    Book a training
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                </div>
-                <h3>Career Consultation</h3>
-                <p class="service-meta">1 session &middot; 60–90 min</p>
-                <p>A focused 1-on-1 session to tackle a specific challenge — interview prep, architecture review, career path planning, or navigating from junior to senior to lead engineer.</p>
-                <a href="mailto:md.sweelam@gmail.com" class="service-cta">
-                    Get in touch
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-            </div>
-
-        </div>
-
-        <p style="margin-top:2rem;font-size:0.875rem;color:var(--text-muted)">
-            To register or ask questions, reach out at
-            <a href="mailto:md.sweelam@gmail.com" class="inline-link">md.sweelam@gmail.com</a>
-        </p>
-    </div>
-</section>
-
-<!-- ─── BOOKS ──────────────────────────────────────────── -->
-<section id="books" class="section">
-    <div class="container">
-        <h2 class="section-title">Books</h2>
-        <div class="books-grid">
-            <a class="book-card" href="https://leanpub.com/thehighwaypathtoscalablesystems" target="_blank" rel="noopener noreferrer">
-                <div class="book-card__cover">
-                    <img src="img/book-cover.png" alt="The Highway Path to Scalable Systems cover" loading="lazy">
-                </div>
-                <div class="book-card__body">
-                    <h3>The Highway Path to Scalable Systems</h3>
-                    <p class="book-card__author">by Mohamed Sweelam &amp; Jasser Mahmoud</p>
-                    <p class="book-card__desc">A Comprehensive Guide to Architectural Decisions, Principles, and Real-World Case Studies.</p>
-                    <div class="book-card__cta">
-                        Get the Book
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ─── ONLINE COURSES ─────────────────────────────────── -->
-<section id="courses" class="section section-alt">
-    <div class="container">
-        <h2 class="section-title">Online Courses</h2>
-        <p class="section-intro">Practical courses on backend engineering, architecture patterns, and scalable systems.</p>
-        <div class="carousel-outer">
-            <button class="carousel-arrow" id="courses-prev" aria-label="Previous">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
-            <div class="carousel-wrapper">
-                <div class="carousel-track" id="courses-track">
-                    <a class="course-card" href="https://www.udemy.com/course/eda-advanced-patterns-and-practices/?referralCode=4B1A85E1F31238EF7679" target="_blank" rel="noopener noreferrer">
-                        <div class="course-card__image">
-                            <img src="img/eda.jpeg" alt="Event Driven Architecture course" loading="lazy">
-                            <span class="course-card__badge">Course</span>
-                        </div>
-                        <div class="course-card__body">
-                            <h3>Event Driven Architecture "Advanced Patterns and Practices"</h3>
-                            <p>Learn how to build Event-Centric Scalable Systems — CQRS, Saga, Outbox, and more.</p>
-                            <div class="course-card__footer">View course <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                        </div>
-                    </a>
-                    <a class="course-card" href="https://www.udemy.com/course/building-scalable-systems-using-spring-boot/?referralCode=CB05AE2070DF263B6393" target="_blank" rel="noopener noreferrer">
-                        <div class="course-card__image">
-                            <img src="img/scalable-systems.png" alt="Building Scalable Systems using Spring Boot" loading="lazy">
-                            <span class="course-card__badge">Course</span>
-                        </div>
-                        <div class="course-card__body">
-                            <h3>Building Scalable Systems using Spring Boot</h3>
-                            <p>Master the art of designing and implementing scalable systems with Spring Boot.</p>
-                            <div class="course-card__footer">View course <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                        </div>
-                    </a>
-                    <a class="course-card" href="https://www.udemy.com/course/ultimate-backend/?referralCode=3570134DDB42A4CD38A9" target="_blank" rel="noopener noreferrer">
-                        <div class="course-card__image">
-                            <img src="img/modern-backend.png" alt="The Ultimate Guide to Backend Development" loading="lazy">
-                            <span class="course-card__badge">Course</span>
-                        </div>
-                        <div class="course-card__body">
-                            <h3>The Ultimate Guide to Backend Development</h3>
-                            <p>Become a proficient backend developer with this comprehensive course covering all essential concepts.</p>
-                            <div class="course-card__footer">View course <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                        </div>
-                    </a>
-                    <a class="course-card" href="https://www.youtube.com/playlist?list=PLgAqrVq84PDcOryFRPZmhXR_FwGauGtyv" target="_blank" rel="noopener noreferrer">
-                        <div class="course-card__image">
-                            <img src="img/api-design.png" alt="API Design and Management" loading="lazy">
-                            <span class="course-card__badge">Course</span>
-                        </div>
-                        <div class="course-card__body">
-                            <h3>API Design and Management</h3>
-                            <p>Learn how to design, build, and manage robust APIs for modern applications.</p>
-                            <div class="course-card__footer">View course <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <button class="carousel-arrow" id="courses-next" aria-label="Next">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-        </div>
-        <div class="carousel-dots" id="courses-dots"></div>
-    </div>
-</section>
-
-
-<!-- ─── NEWS & ANNOUNCEMENTS ───────────────────────────── -->
-<section id="news" class="section">
-    <div class="container" style="max-width:800px">
-        <h2 class="section-title">News &amp; Announcements</h2>
-        <p>Stay Tuned!</p>
-        <!-- <div class="news-list" id="news-list" data-limit="3"></div> -->
-    </div>
-</section>
-
-<!-- ─── WHAT PEOPLE SAY ────────────────────────────────── -->
-<section id="testimonials" class="section">
-    <div class="container">
-        <h2 class="section-title">What People Say</h2>
-        <p class="section-intro">Feedback from engineers I've mentored and trained.</p>
-        <div class="carousel-outer">
-            <button class="carousel-arrow" id="carousel-prev" aria-label="Previous">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
-            <div class="carousel-wrapper">
-                <div class="carousel-track" id="testimonials-track"></div>
-            </div>
-            <button class="carousel-arrow" id="carousel-next" aria-label="Next">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-        </div>
-        <div class="carousel-dots" id="carousel-dots"></div>
-    </div>
-</section>
-
-</main>
-
-<!-- ─── FOOTER ─────────────────────────────────────────── -->
-<footer class="site-footer">
-    <div class="container footer-grid">
-        <div class="footer-col">
-            <a href="/" class="nav-logo" style="text-decoration:none">
+    <!-- ─── HEADER ─────────────────────────────────────────── -->
+    <header class="site-header">
+        <nav class="nav container">
+            <a href="/" class="nav-logo" aria-label="Home">
                 <div class="logo-img-wrap">
-                    <img src="img/my-logo.jpeg" alt="Mohamed Sweelam" class="site-logo" data-light="img/my-logo.jpeg" data-dark="img/my-logo-dark.png">
+                    <img src="img/my-logo.jpeg" alt="Mohamed Sweelam" class="site-logo" data-light="img/my-logo.jpeg"
+                        data-dark="img/my-logo-dark.png">
                 </div>
             </a>
-            <p class="footer-tagline">Empowering engineers by teaching, and sharing writings.</p>
+
+            <div class="nav-links" id="nav-links" role="navigation">
+                <a href="#about">About</a>
+                <a href="https://blog.msweelam.dev" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="#services">Services</a>
+                <a href="#books">Books</a>
+                <a href="#courses">Courses</a>
+                <a href="#news">News</a>
+            </div>
+
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+                <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+            </button>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ─── HERO ───────────────────────────────────────────── -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <p class="hero-eyebrow">Engineer &middot; Mentor &middot; Author</p>
+                    <h1>Mohamed Sweelam</h1>
+                    <p class="hero-tagline">Software Engineer with over a decade of experience building distributed
+                        systems across multiple industries, including telecom, hotel management, customer engagement,
+                        and fintech. I mentor engineers, author books, and share knowledge through courses and writing.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#services" class="btn btn-primary">
+                            Work with me
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="https://blog.msweelam.dev" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline">
+                            Read the blog
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <nav class="social-row" aria-label="Social links">
+                        <a href="https://github.com/sweelam" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                                <path d="M9 18c-4.51 2-5-2-7-2" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohamedsweelam" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect width="4" height="12" x="2" y="9" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="https://blog.msweelam.dev" target="_blank" rel="noopener noreferrer" aria-label="Blog">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 20h9" />
+                                <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:md.sweelam@gmail.com" aria-label="Email">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect width="20" height="16" x="2" y="4" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@ArabSoftwareArchTalks" target="_blank"
+                            rel="noopener noreferrer" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                                <path d="m10 15 5-3-5-3z" />
+                            </svg>
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="hero-photo">
+                    <img src="img/me.png" alt="Mohamed Sweelam">
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── ABOUT — Engineer, Mentor & Author ──────────────── -->
+        <section id="about" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Engineer, Mentor &amp; Author</h2>
+                <p class="section-intro">A decade of experience across fintech, enterprise, and developer education —
+                    building systems, growing engineers, and sharing what I've learned.</p>
+
+                <div class="roles-grid">
+
+                    <div class="role-card">
+                        <div class="role-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect width="20" height="8" x="2" y="2" rx="2" />
+                                <rect width="20" height="8" x="2" y="14" rx="2" />
+                                <circle cx="6" cy="6" r="1" />
+                                <circle cx="6" cy="18" r="1" />
+                            </svg>
+                        </div>
+                        <h3>AI Enablement Engineer</h3>
+                        <p>10+ years designing cloud-native microservices and distributed systems in high-stakes fintech
+                            environments. Expert in Java, Spring Boot, Kafka, and scalability patterns.</p>
+                        <div class="pills" style="margin-top:1rem">
+                            <span class="pill">Distributed Systems</span>
+                            <span class="pill">Cloud-Native</span>
+                            <span class="pill">Microservices</span>
+                            <span class="pill">AI Enablement</span>
+                        </div>
+                    </div>
+
+                    <div class="role-card">
+                        <div class="role-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                        <h3>Mentor</h3>
+                        <p>Mentored 50+ engineers through the <strong>To Be Engineer</strong> program — from junior to
+                            senior and lead. Structured sessions on system design, clean code, architecture, and career
+                            growth.</p>
+                        <div class="pills" style="margin-top:1rem">
+                            <span class="pill">50+ Engineers</span>
+                            <span class="pill">System Design</span>
+                            <span class="pill">Career Growth</span>
+                        </div>
+                    </div>
+
+                    <div class="role-card">
+                        <div class="role-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                            </svg>
+                        </div>
+                        <h3>Author</h3>
+                        <p>Co-author of <em>The Highway Path to Scalable Systems</em>. I also write regularly at <a
+                                href="https://blog.msweelam.dev" target="_blank" rel="noopener noreferrer"
+                                class="inline-link">blog.msweelam.dev</a> on backend engineering, system design, and
+                            career development.</p>
+                        <div class="pills" style="margin-top:1rem">
+                            <span class="pill">Scalable Systems</span>
+                            <span class="pill">Technical Writing</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── SERVICES ────────────────────────────────────────── -->
+        <section id="services" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Services</h2>
+                <p class="section-intro">Personalized programs designed to accelerate your engineering career at every
+                    level.</p>
+
+                <div class="services-grid">
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <circle cx="12" cy="12" r="6" />
+                                <circle cx="12" cy="12" r="2" />
+                            </svg>
+                        </div>
+                        <h3>Full Mentorship Program</h3>
+                        <p class="service-meta">2 months &middot; 8–10 sessions &middot; 60 min each</p>
+                        <p>A structured 2-month journey covering system design, clean code, software architecture,
+                            domain-driven design, scalable systems, and mock interviews. Tailored to your level and
+                            goals.</p>
+                        <a href="mailto:md.sweelam@gmail.com" class="service-cta">
+                            Apply now
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                                <line x1="16" x2="16" y1="2" y2="6" />
+                                <line x1="8" x2="8" y1="2" y2="6" />
+                                <line x1="3" x2="21" y1="10" y2="10" />
+                            </svg>
+                        </div>
+                        <h3>One-Day Training</h3>
+                        <p class="service-meta">1 day &middot; 3 sessions &middot; 140 min each</p>
+                        <p>An intensive one-day deep-dive session for teams or individuals. Covers backend engineering
+                            fundamentals, architecture patterns, and hands-on problem solving.</p>
+                        <a href="mailto:md.sweelam@gmail.com" class="service-cta">
+                            Book a training
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg>
+                        </div>
+                        <h3>Career Consultation</h3>
+                        <p class="service-meta">1 session &middot; 60–90 min</p>
+                        <p>A focused 1-on-1 session to tackle a specific challenge — interview prep, architecture
+                            review, career path planning, or navigating from junior to senior to lead engineer.</p>
+                        <a href="mailto:md.sweelam@gmail.com" class="service-cta">
+                            Get in touch
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+
+                <p style="margin-top:2rem;font-size:0.875rem;color:var(--text-muted)">
+                    To register or ask questions, reach out at
+                    <a href="mailto:md.sweelam@gmail.com" class="inline-link">md.sweelam@gmail.com</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- ─── BOOKS ──────────────────────────────────────────── -->
+        <section id="books" class="section">
+            <div class="container">
+                <h2 class="section-title">Books</h2>
+                <div class="books-grid">
+                    <a class="book-card" href="https://leanpub.com/thehighwaypathtoscalablesystems" target="_blank"
+                        rel="noopener noreferrer">
+                        <div class="book-card__cover">
+                            <img src="img/book-cover.png" alt="The Highway Path to Scalable Systems cover"
+                                loading="lazy">
+                        </div>
+                        <div class="book-card__body">
+                            <h3>The Highway Path to Scalable Systems</h3>
+                            <p class="book-card__author">by Mohamed Sweelam &amp; Jasser Mahmoud</p>
+                            <p class="book-card__desc">A Comprehensive Guide to Architectural Decisions, Principles, and
+                                Real-World Case Studies.</p>
+                            <div class="book-card__cta">
+                                Get the Book
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M5 12h14" />
+                                    <path d="m12 5 7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── ONLINE COURSES ─────────────────────────────────── -->
+        <section id="courses" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Online Courses</h2>
+                <p class="section-intro">Practical courses on backend engineering, architecture patterns, and scalable
+                    systems.</p>
+                <div class="carousel-outer">
+                    <button class="carousel-arrow" id="courses-prev" aria-label="Previous">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
+                    </button>
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track" id="courses-track">
+                            <a class="course-card"
+                                href="https://www.udemy.com/course/eda-advanced-patterns-and-practices/?referralCode=4B1A85E1F31238EF7679"
+                                target="_blank" rel="noopener noreferrer">
+                                <div class="course-card__image">
+                                    <img src="img/eda.jpeg" alt="Event Driven Architecture course" loading="lazy">
+                                    <span class="course-card__badge">Course</span>
+                                </div>
+                                <div class="course-card__body">
+                                    <h3>Event Driven Architecture "Advanced Patterns and Practices"</h3>
+                                    <p>Learn how to build Event-Centric Scalable Systems — CQRS, Saga, Outbox, and more.
+                                    </p>
+                                    <div class="course-card__footer">View course <svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <polyline points="12 5 19 12 12 19" />
+                                        </svg></div>
+                                </div>
+                            </a>
+                            <a class="course-card"
+                                href="https://www.udemy.com/course/building-scalable-systems-using-spring-boot/?referralCode=CB05AE2070DF263B6393"
+                                target="_blank" rel="noopener noreferrer">
+                                <div class="course-card__image">
+                                    <img src="img/scalable-systems.png"
+                                        alt="Building Scalable Systems using Spring Boot" loading="lazy">
+                                    <span class="course-card__badge">Course</span>
+                                </div>
+                                <div class="course-card__body">
+                                    <h3>Building Scalable Systems using Spring Boot</h3>
+                                    <p>Master the art of designing and implementing scalable systems with Spring Boot.
+                                    </p>
+                                    <div class="course-card__footer">View course <svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <polyline points="12 5 19 12 12 19" />
+                                        </svg></div>
+                                </div>
+                            </a>
+                            <a class="course-card"
+                                href="https://www.udemy.com/course/ultimate-backend/?referralCode=3570134DDB42A4CD38A9"
+                                target="_blank" rel="noopener noreferrer">
+                                <div class="course-card__image">
+                                    <img src="img/modern-backend.png" alt="The Ultimate Guide to Backend Development"
+                                        loading="lazy">
+                                    <span class="course-card__badge">Course</span>
+                                </div>
+                                <div class="course-card__body">
+                                    <h3>The Ultimate Guide to Backend Development</h3>
+                                    <p>Become a proficient backend developer with this comprehensive course covering all
+                                        essential concepts.</p>
+                                    <div class="course-card__footer">View course <svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <polyline points="12 5 19 12 12 19" />
+                                        </svg></div>
+                                </div>
+                            </a>
+                            <a class="course-card"
+                                href="https://www.youtube.com/playlist?list=PLgAqrVq84PDcOryFRPZmhXR_FwGauGtyv"
+                                target="_blank" rel="noopener noreferrer">
+                                <div class="course-card__image">
+                                    <img src="img/api-design.png" alt="API Design and Management" loading="lazy">
+                                    <span class="course-card__badge">Course</span>
+                                </div>
+                                <div class="course-card__body">
+                                    <h3>API Design and Management</h3>
+                                    <p>Learn how to design, build, and manage robust APIs for modern applications.</p>
+                                    <div class="course-card__footer">View course <svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <polyline points="12 5 19 12 12 19" />
+                                        </svg></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <button class="carousel-arrow" id="courses-next" aria-label="Next">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="carousel-dots" id="courses-dots"></div>
+            </div>
+        </section>
+
+
+        <!-- ─── NEWS & ANNOUNCEMENTS ───────────────────────────── -->
+        <section id="news" class="section">
+            <div class="container" style="max-width:800px">
+                <h2 class="section-title">News &amp; Announcements</h2>
+                <div class="news-list" id="news-list" data-limit="3"></div>
+            </div>
+        </section>
+
+        <!-- ─── WHAT PEOPLE SAY ────────────────────────────────── -->
+        <section id="testimonials" class="section">
+            <div class="container">
+                <h2 class="section-title">What People Say</h2>
+                <p class="section-intro">Feedback from engineers I've mentored and trained.</p>
+                <div class="carousel-outer">
+                    <button class="carousel-arrow" id="carousel-prev" aria-label="Previous">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
+                    </button>
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track" id="testimonials-track"></div>
+                    </div>
+                    <button class="carousel-arrow" id="carousel-next" aria-label="Next">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="carousel-dots" id="carousel-dots"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ─── FOOTER ─────────────────────────────────────────── -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="/" class="nav-logo" style="text-decoration:none">
+                    <div class="logo-img-wrap">
+                        <img src="img/my-logo.jpeg" alt="Mohamed Sweelam" class="site-logo"
+                            data-light="img/my-logo.jpeg" data-dark="img/my-logo-dark.png">
+                    </div>
+                </a>
+                <p class="footer-tagline">Empowering engineers by teaching, and sharing writings.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-heading">Links</h3>
+                <a href="#about">About</a>
+                <a href="https://blog.msweelam.dev" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="#services">Services</a>
+                <a href="#books">Books</a>
+                <a href="#courses">Courses</a>
+                <a href="#news">News</a>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-heading">Connect</h3>
+                <a href="mailto:md.sweelam@gmail.com">md.sweelam@gmail.com</a>
+                <nav class="social-row" aria-label="Social links" style="margin-top:0.75rem">
+                    <a href="https://github.com/sweelam" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                            <path d="M9 18c-4.51 2-5-2-7-2" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohamedsweelam" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect width="4" height="12" x="2" y="9" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </a>
+                    <a href="https://blog.msweelam.dev" target="_blank" rel="noopener noreferrer" aria-label="Blog">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 20h9" />
+                            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                        </svg>
+                    </a>
+                    <a href="https://blog.msweelam.dev/rss.xml" target="_blank" rel="noopener noreferrer"
+                        aria-label="RSS Feed">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 11a9 9 0 0 1 9 9" />
+                            <path d="M4 4a16 16 0 0 1 16 16" />
+                            <circle cx="5" cy="19" r="1" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@ArabSoftwareArchTalks" target="_blank" rel="noopener noreferrer"
+                        aria-label="YouTube">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                            <path d="m10 15 5-3-5-3z" />
+                        </svg>
+                    </a>
+                </nav>
+            </div>
         </div>
 
-        <div class="footer-col">
-            <h3 class="footer-heading">Links</h3>
-            <a href="#about">About</a>
-            <a href="https://blog.msweelam.dev" target="_blank" rel="noopener noreferrer">Blog</a>
-            <a href="#services">Services</a>
-            <a href="#books">Books</a>
-            <a href="#courses">Courses</a>
-            <a href="#news">News</a>
+        <div class="footer-bottom container">
+            <p>&copy; 2025 Mohamed Sweelam. All rights reserved.</p>
         </div>
+    </footer>
 
-        <div class="footer-col">
-            <h3 class="footer-heading">Connect</h3>
-            <a href="mailto:md.sweelam@gmail.com">md.sweelam@gmail.com</a>
-            <nav class="social-row" aria-label="Social links" style="margin-top:0.75rem">
-                <a href="https://github.com/sweelam" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/mohamedsweelam" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-                <a href="https://blog.msweelam.dev" target="_blank" rel="noopener noreferrer" aria-label="Blog">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-                </a>
-                <a href="https://blog.msweelam.dev/rss.xml" target="_blank" rel="noopener noreferrer" aria-label="RSS Feed">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
-                </a>
-                <a href="https://www.youtube.com/@ArabSoftwareArchTalks" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
-                </a>
-            </nav>
-        </div>
-    </div>
+    <script src="js/main.js"></script>
+    <script src="js/news.js"></script>
+    <script src="js/testimonials.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Courses carousel — 4 static cards already in the DOM
+            const coursesTrack = document.getElementById('courses-track');
+            if (coursesTrack) {
+                initCarousel({
+                    track: coursesTrack,
+                    items: Array.from({ length: 4 }),
+                    dotsEl: document.getElementById('courses-dots'),
+                    prevBtn: document.getElementById('courses-prev'),
+                    nextBtn: document.getElementById('courses-next'),
+                    cardSelector: '.course-card',
+                    interval: 10000,
+                });
+            }
 
-    <div class="footer-bottom container">
-        <p>&copy; 2025 Mohamed Sweelam. All rights reserved.</p>
-    </div>
-</footer>
-
-<script src="js/main.js"></script>
-<script src="js/news.js"></script>
-<script src="js/testimonials.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Courses carousel — 4 static cards already in the DOM
-    const coursesTrack = document.getElementById('courses-track');
-    if (coursesTrack) {
-        initCarousel({
-            track:        coursesTrack,
-            items:        Array.from({ length: 4 }),
-            dotsEl:       document.getElementById('courses-dots'),
-            prevBtn:      document.getElementById('courses-prev'),
-            nextBtn:      document.getElementById('courses-next'),
-            cardSelector: '.course-card',
-            interval:     10000,
+            // Testimonials carousel — rendered from testimonials data array
+            const testimonialsTrack = document.getElementById('testimonials-track');
+            if (testimonialsTrack) {
+                testimonialsTrack.innerHTML = testimonials.map(createTestimonialCard).join('');
+                initCarousel({
+                    track: testimonialsTrack,
+                    items: testimonials,
+                    dotsEl: document.getElementById('carousel-dots'),
+                    prevBtn: document.getElementById('carousel-prev'),
+                    nextBtn: document.getElementById('carousel-next'),
+                    cardSelector: '.testimonial-card',
+                });
+            }
         });
-    }
-
-    // Testimonials carousel — rendered from testimonials data array
-    const testimonialsTrack = document.getElementById('testimonials-track');
-    if (testimonialsTrack) {
-        testimonialsTrack.innerHTML = testimonials.map(createTestimonialCard).join('');
-        initCarousel({
-            track:        testimonialsTrack,
-            items:        testimonials,
-            dotsEl:       document.getElementById('carousel-dots'),
-            prevBtn:      document.getElementById('carousel-prev'),
-            nextBtn:      document.getElementById('carousel-next'),
-            cardSelector: '.testimonial-card',
-        });
-    }
-});
-</script>
+    </script>
 </body>
+
 </html>
