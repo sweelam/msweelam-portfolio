@@ -1226,3 +1226,8 @@ button:focus:not(:focus-visible) { outline: none; }
     .hero-actions     { flex-direction: column; }
     .btn              { justify-content: center; }
 }
+
+.visitor-count {
+    margin-top: 0.35rem;
+    font-variant-numeric: tabular-nums;
+}

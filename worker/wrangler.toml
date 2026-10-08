@@ -1,0 +1,13 @@
+name = "msweelam-dev-api"
+main = "src/index.js"
+compatibility_date = "2025-06-01"
+
+# Serve /api/* on the main site; everything else still goes to GitHub Pages.
+routes = [{ pattern = "msweelam.dev/api/*", zone_name = "msweelam.dev" }]
+
+# Shared with the blog (my-blogs). Site visitors live in `views` under slug "msweelam.dev",
+# which can't collide with blog posts: their slugs never contain dots.
+[[d1_databases]]
+binding = "DB"
+database_name = "my-blogs-reactions"
+database_id = "afe194aa-74c0-46f8-9a71-410d557233d8"

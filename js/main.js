@@ -74,6 +74,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ── Visitor counter (Cloudflare Worker at /api) ───────
+    // Stays hidden when the API isn't reachable (e.g. local dev).
+    const visitorCount = document.getElementById('visitor-count');
+    if (visitorCount) {
+        fetch('/api/visitors', { method: 'POST' })
+            .then(res => (res.ok ? res.json() : Promise.reject(res.status)))
+            .then(({ visitors }) => {
+                visitorCount.textContent = `${visitors.toLocaleString()} unique ${visitors === 1 ? 'visitor' : 'visitors'}`;
+                visitorCount.hidden = false;
+            })
+            .catch(() => {});
+    }
+
 });
 
 // ── Carousel ─────────────────────────────────────────────
