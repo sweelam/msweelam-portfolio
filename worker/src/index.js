@@ -2,6 +2,8 @@
 // Records the current visitor (once) and returns the site's unique visitor count.
 
 const SITE_SLUG = 'msweelam.dev';
+// Visitors from before the counter existed; added on top of the tracked count.
+const BASE_VISITORS = 277;
 const ONE_YEAR = 60 * 60 * 24 * 365;
 
 function json(body, status = 200, headers = {}) {
@@ -39,6 +41,6 @@ export default {
             env.DB.prepare('SELECT COUNT(*) AS visitors FROM views WHERE slug = ?1').bind(SITE_SLUG),
         ]);
 
-        return json({ visitors: count.results[0]?.visitors ?? 0 }, 200, headers);
+        return json({ visitors: BASE_VISITORS + (count.results[0]?.visitors ?? 0) }, 200, headers);
     },
 };
