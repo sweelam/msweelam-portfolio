@@ -81,8 +81,30 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('/api/visitors', { method: 'POST' })
             .then(res => (res.ok ? res.json() : Promise.reject(res.status)))
             .then(({ visitors }) => {
-                visitorCount.textContent = `${visitors.toLocaleString()} ${visitors === 1 ? 'visitor' : 'visitors'}`;
+                const dot = document.createElement('span');
+                dot.className = 'visitor-count__dot';
+                dot.setAttribute('aria-hidden', 'true');
+                const num = document.createElement('strong');
+                num.className = 'visitor-count__num';
+                const label = document.createElement('span');
+                label.textContent = visitors === 1 ? 'visitor' : 'visitors';
+                visitorCount.replaceChildren(dot, num, label);
                 visitorCount.hidden = false;
+
+                // Count up from 0, unless the user prefers reduced motion.
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    num.textContent = visitors.toLocaleString();
+                    return;
+                }
+                const duration = 1200;
+                const start = performance.now();
+                const tick = (now) => {
+                    const t = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - t, 3);
+                    num.textContent = Math.round(visitors * eased).toLocaleString();
+                    if (t < 1) requestAnimationFrame(tick);
+                };
+                requestAnimationFrame(tick);
             })
             .catch(() => {});
     }
