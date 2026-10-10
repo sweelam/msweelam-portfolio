@@ -1,6 +1,6 @@
 # msweelam.dev
 
-Personal website for **Mohamed Sweelam** — Senior Backend Engineer, author, and mentor.
+Personal website for **Mohamed Sweelam** — Engineering Lead at Orki (AI & multi-agent systems), author, and mentor.
 
 Deployed via GitHub Pages at [msweelam.dev](https://msweelam.dev).
 
@@ -14,10 +14,11 @@ Deployed via GitHub Pages at [msweelam.dev](https://msweelam.dev).
 /news/              → News & announcements
 /data/news.json     → News data file (edit here to add announcements)
 /css/styles.css     → All styles (shared across pages)
-/js/main.js         → Shared utilities (nav, scroll, carousel engine)
+/js/main.js         → Shared utilities (theme, nav, ⌘K palette, reveal, carousel)
+/js/testimonials.js → Testimonial data + wall renderer (homepage & mentorship)
 /js/news.js         → News page rendering
 /js/mentorship.js   → Mentorship page data & carousels
-/img/               → Images
+/img/               → Images (logo-mark*.png = transparent MS monogram)
 /favicon.svg        → SVG favicon (MS initials)
 ```
 

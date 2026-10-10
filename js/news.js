@@ -1,5 +1,8 @@
 /* news.js — renders news entries from /data/news.json */
 
+// Project root, resolved from this script's URL so it works from any page.
+const NEWS_BASE = new URL('..', document.currentScript.src).href;
+
 function formatDate(dateStr) {
     const d = new Date(dateStr + 'T00:00:00');
     return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -7,11 +10,11 @@ function formatDate(dateStr) {
 
 function renderNews(entries, container) {
     if (!entries.length) {
-        container.innerHTML = '<p style="color:var(--text-muted)">No announcements yet.</p>';
+        container.innerHTML = '<p class="news-empty">No announcements yet.</p>';
         return;
     }
 
-    container.innerHTML = entries.map(entry => {
+    container.innerHTML = entries.map((entry, i) => {
         const linkHtml = entry.link
             ? `<a href="${entry.link}" target="_blank" rel="noopener noreferrer" class="news-entry-link">
                    ${entry.linkText || 'Read more'}
@@ -20,8 +23,8 @@ function renderNews(entries, container) {
             : '';
 
         return `
-        <article class="news-entry">
-            <p class="news-date">${formatDate(entry.date)}</p>
+        <article class="news-entry spotlight">
+            <p class="news-date"><time datetime="${entry.date}">${formatDate(entry.date)}</time>${i === 0 ? '<span class="news-tag">Latest</span>' : ''}</p>
             <h3>${entry.title}</h3>
             ${entry.body.split('\n').map(p => `<p>${p}</p>`).join('')}
             ${linkHtml}
@@ -33,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('news-list');
     if (!container) return;
 
-    fetch('/data/news.json')
+    fetch(`${NEWS_BASE}data/news.json`)
         .then(r => {
             if (!r.ok) throw new Error('Failed to load news');
             return r.json();
@@ -45,6 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
             renderNews(limit ? sorted.slice(0, limit) : sorted, container);
         })
         .catch(() => {
-            container.innerHTML = '<p style="color:var(--text-muted)">Could not load announcements.</p>';
+            container.innerHTML = '<p class="news-empty">Could not load announcements.</p>';
         });
 });

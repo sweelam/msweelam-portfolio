@@ -1,5 +1,5 @@
-/* testimonials.js — data + renderer shared by the homepage carousel.
-   To add a testimonial: append a new object to the array below.        */
+/* testimonials.js — data + renderers shared by the homepage and mentorship page.
+   To add a testimonial: append a new object to the array below.               */
 
 const testimonials = [
     {
@@ -70,17 +70,45 @@ const testimonials = [
     }
 ];
 
-function createTestimonialCard(t) {
+// Project root, resolved from this script's URL so images load from any page (and file://).
+const ASSET_BASE = new URL('..', document.currentScript.src).href;
+
+const QUOTE_ICON = '<svg class="testimonial-quote" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 6C6.5 7.3 4.5 10 4.5 13.6V18h5.4v-5.4H7.2c0-2 1.2-3.6 3.3-4.5L9.6 6Zm9 0c-3.1 1.3-5.1 4-5.1 7.6V18h5.4v-5.4h-2.7c0-2 1.2-3.6 3.3-4.5L18.6 6Z"/></svg>';
+
+// Arabic quotes render right-to-left so punctuation and mixed English land correctly.
+const isRtl = text => /[\u0600-\u06FF]/.test(text.slice(0, 40));
+
+function createTestimonialCard(t, hidden = false) {
     return `
-        <div class="testimonial-card">
-            <div class="testimonial-header">
-                <img src="${t.image}" alt="${t.name}" class="testimonial-image" loading="lazy">
+        <figure class="testimonial-card spotlight"${hidden ? ' aria-hidden="true"' : ''}>
+            ${QUOTE_ICON}
+            <blockquote class="testimonial-text" dir="${isRtl(t.text) ? 'rtl' : 'ltr'}"${isRtl(t.text) ? ' lang="ar"' : ''}>${t.text}</blockquote>
+            <figcaption class="testimonial-header">
+                <img src="${ASSET_BASE}${t.image}" alt="" class="testimonial-image" loading="lazy" width="40" height="40">
                 <div class="testimonial-info">
                     <h3>${t.name}</h3>
                     <p>${t.role}</p>
                 </div>
-            </div>
-            <p class="testimonial-text">${t.text}</p>
-            <div class="testimonial-rating" aria-label="5 stars">★★★★★</div>
-        </div>`;
+                <div class="testimonial-rating" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+            </figcaption>
+        </figure>`;
+}
+
+// Two rows of cards drifting in opposite directions. Each track is rendered
+// twice so the loop is seamless; the copy is hidden from assistive tech.
+function initTestimonialWall(container, items = testimonials) {
+    if (!container) return;
+    const half = Math.ceil(items.length / 2);
+    const rows = [items.slice(0, half), items.slice(half)];
+
+    container.innerHTML = rows.map((row, r) => {
+        const cards = row.map(t => createTestimonialCard(t)).join('');
+        const copy  = row.map(t => createTestimonialCard(t, true)).join('');
+        const duration = `${row.length * 9}s`;
+        return `
+            <div class="wall__row${r % 2 ? ' wall__row--reverse' : ''}" style="--marquee-duration:${duration}">
+                <div class="wall__track">${cards}</div>
+                <div class="wall__track" aria-hidden="true">${copy}</div>
+            </div>`;
+    }).join('');
 }
