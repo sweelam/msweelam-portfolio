@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('/api/visitors', { method: 'POST' })
             .then(res => (res.ok ? res.json() : Promise.reject(res.status)))
             .then(({ visitors }) => {
-                visitorCount.textContent = `${visitors.toLocaleString()} unique ${visitors === 1 ? 'visitor' : 'visitors'}`;
+                visitorCount.textContent = `${visitors.toLocaleString()} ${visitors === 1 ? 'visitor' : 'visitors'}`;
                 visitorCount.hidden = false;
             })
             .catch(() => {});
