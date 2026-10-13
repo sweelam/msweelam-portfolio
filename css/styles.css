@@ -1795,6 +1795,34 @@ a.status-pill:hover { border-color: var(--border-hover); }
 
 .news-entry p + p { margin-top: 0.6rem; }
 
+.news-entry-media {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1024 / 572;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin: 0.4rem 0 1.1rem;
+}
+
+.news-features {
+    margin: 0.9rem 0 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.45rem;
+    max-width: 70ch;
+}
+
+.news-features li {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.65;
+}
+
+.news-features li::marker { color: var(--primary); }
+.news-features strong { color: var(--text); font-weight: 600; }
+
 .news-entry-link {
     display: inline-flex;
     align-items: center;

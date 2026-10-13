@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-10-14",
+    "title": "Introducing Kafdugres - A Durable Workflow Engine",
+    "image": {
+      "light": "img/kafdugres-light.jpeg",
+      "dark": "img/kafdugres-dark.jpeg",
+      "alt": "Kafdugres — Durable Workflow Engine logo"
+    },
+    "body": "I'm excited to announce Kafdugres (Kafka + Durable + Gres), a durable workflow engine. You describe a workflow as a DAG of tasks in JSON; Kafdugres runs it reliably across crashes and restarts, dispatches its tasks to your workers through Kafka, retries and times out what fails, and keeps a complete history of every execution.\nPostgreSQL is the source of truth; Kafka is the task transport and publishes every execution's history.",
+    "features": [
+      { "title": "Workflows as DAGs", "text": "parallel branches, joins, CEL conditions on edges and tasks, decision, timer, signal (human-in-the-loop), and child-workflow tasks, map (bounded fan-out over a list) and loop (polling, pagination) tasks, input/output expressions, and versioned definitions." },
+      { "title": "Schedules and continue-as-new", "text": "cron (with timezones) or interval schedules with overlap policies, catch-up after outages, pause/resume, and run-now; long-running workflows continue as a new run with a fresh history and pick up new definition versions." },
+      { "title": "Queries and updates", "text": "declared CEL queries read a running execution's state (including activity progress) without a worker; validated updates change it and return a result, idempotently." },
+      { "title": "Reliable execution", "text": "transactional state machine with an outbox, durable timers, retries with backoff, task and workflow timeouts, activity heartbeats with resumable progress and cancellation, idempotent starts, exactly-once application of at-least-once results, and fail_fast / continue / rollback (saga compensation) failure strategies." },
+      { "title": "Workers in any language", "text": "Go SDK, a ready-made worker that calls HTTP services, a documented Kafka protocol, or report results over HTTP/gRPC. Task queues route work to the right workers." },
+      { "title": "Multi-tenant", "text": "per-tenant topics, quotas, rate limits, API keys, and audit log." },
+      { "title": "APIs", "text": "REST, WebSocket live updates, and gRPC with streaming watches; API keys and OIDC; role-based permissions." },
+      { "title": "Operable", "text": "stateless engine replicas, Prometheus metrics, health checks, structured logs, web UI, Helm chart, and a Kubernetes operator for tenants and worker pools." }
+    ]
+  },
+  {
     "date": "2026-06-07",
     "title": "Introducing FVP - Offline Format Viewer & Parser",
     "body": "I'm excited to announce FVP, an offline \"Local-First\" toolkit for every data format. It allows you to format, validate, compare, and inspect common developer formats locally in your browser. Whether you need to visualize logs, validate Docker Compose files, decode JWTs, or format JSON/YAML, FVP has you covered with a privacy-first approach.",

@@ -14,7 +14,7 @@ function applyTheme(dark) {
     } else {
         html.removeAttribute('data-theme');
     }
-    document.querySelectorAll('.site-logo').forEach(img => {
+    document.querySelectorAll('.site-logo, .theme-img').forEach(img => {
         img.src = dark ? img.dataset.dark : img.dataset.light;
     });
 }

@@ -14,6 +14,8 @@ function renderNews(entries, container) {
         return;
     }
 
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+
     container.innerHTML = entries.map((entry, i) => {
         const linkHtml = entry.link
             ? `<a href="${entry.link}" target="_blank" rel="noopener noreferrer" class="news-entry-link">
@@ -22,11 +24,26 @@ function renderNews(entries, container) {
                </a>`
             : '';
 
+        // Optional image with light/dark variants; main.js swaps .theme-img on theme toggle.
+        const img = entry.image;
+        const imageHtml = img
+            ? `<img class="news-entry-media theme-img" loading="lazy" alt="${img.alt || ''}"
+                   src="${NEWS_BASE}${dark ? img.dark : img.light}"
+                   data-light="${NEWS_BASE}${img.light}" data-dark="${NEWS_BASE}${img.dark}">`
+            : '';
+
+        const featuresHtml = entry.features
+            ? `<ul class="news-features">${entry.features.map(f =>
+                `<li><strong>${f.title}</strong> — ${f.text}</li>`).join('')}</ul>`
+            : '';
+
         return `
         <article class="news-entry spotlight">
             <p class="news-date"><time datetime="${entry.date}">${formatDate(entry.date)}</time>${i === 0 ? '<span class="news-tag">Latest</span>' : ''}</p>
             <h3>${entry.title}</h3>
+            ${imageHtml}
             ${entry.body.split('\n').map(p => `<p>${p}</p>`).join('')}
+            ${featuresHtml}
             ${linkHtml}
         </article>`;
     }).join('');
